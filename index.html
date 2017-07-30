@@ -1,0 +1,130 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Marcar Hora</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+      <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+
+      <link rel="stylesheet" href="css/style.css">
+      <!--Let browser know website is optimized for mobile-->
+    </head>
+    <body class="grey darken-4">
+
+      <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+      <!-- <div class="container"> -->
+      <div class="container grey darken-4">
+
+        <div class="section container">
+
+          <p id="mensagem1" class="white-text hide" >
+            Você precisa logar na sua conta do Google para usar esta página
+          </p>
+          <!--Add buttons to initiate auth sequence and sign out-->
+          <button id="authorize-button" class="right hide" >Entrar</button>
+          <button id="signout-button" class="right hide" >Sair</button>
+
+        </div>
+
+
+        <!-- Page Content goes here -->
+        <div id="mainContainer" class="section container" >
+          <!-- <h4 class="deep-purple-text text-darken-4">Marcar Hora</h4> -->
+          <h4 class="blue-text text-darken-2">Marcar Hora</h4>
+          <h6 id="msg_result" class="green-text text-darken-2"></h6>
+          <br> <div class="divider purple "></div> <br>
+          <div class="row">
+            <form class="col s12 m12 blue-text text-darken-1">
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <!-- <i class="material-icons prefix">account_circle</i> -->
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">Nome</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Sobrenome</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="fone" type="tel" class="validate">
+                  <label for="fone">Telefone</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <i class="material-icons prefix">mail</i>
+                  <input id="email" type="email" class="validate">
+                  <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">today</i>
+                    <input placeholder="Data" id="dateCalendar" type="text" class="datepicker">
+                    <!-- <label for="dateC">Data</label> -->
+                </div>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">av_timer</i>
+                    <input placeholder="Hora" id="time" type="text" class="timepicker">
+                    <!-- <input placeholder="Hora" id="time" type="date" class="timepicker"> -->
+                    <!-- <label for="time">Hora</label> -->
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 white-text">
+                  <select id="residencia">
+                    <!-- <option value="" disabled selected>Choose your option</option> -->
+                    <option value="1" selected>Salão</option>
+                    <option value="2">Residência</option>
+                  </select>
+                  <label>Local do corte</label>
+                </div>
+                <div id="div_local" class="input-field col s12 hide">
+                    <i class="material-icons prefix">location_on</i>
+                    <input id="local" type="text" class="validate" value="Salão">
+                    <label for="local">Local do corte</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" data-length="300"></textarea>
+                  <label for="textarea1">Outras informações</label>
+                </div>
+              </div>
+
+              <button id="btnSend" class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">
+                Salvar
+                <i class="material-icons right">send</i>
+              </button>
+
+            </form>
+          </div>
+          <div class="divider purple"></div> <br>
+
+        </div>
+
+        <pre id="content" class=""></pre>
+      </div>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+      <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+      <script type="text/javascript" src="js/calendar.js"></script>
+      <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+      </script>
+      <script type="text/javascript" src="js/script.js"></script>
+    </body>
+  </html>
